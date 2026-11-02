@@ -18,13 +18,36 @@ document.getElementById("explorerWish").addEventListener("click",openPanel);
 document.getElementById("communityWish").addEventListener("click",openPanel);
 document.querySelectorAll('.desktop-nav a').forEach(link=>link.addEventListener("click",event=>{event.preventDefault();if(link.textContent.trim()==="Lời chúc")openCommunity();else openExplorer();}));
 document.querySelector(".scroll-hint").addEventListener("click",event=>{event.preventDefault();openCommunity();});
-document.querySelectorAll(".garden-place").forEach(button=>button.addEventListener("click",()=>{
- document.querySelectorAll(".garden-place").forEach(item=>item.classList.remove("selected"));
- button.classList.add("selected");
- const detail=document.getElementById("placeDetail");
- const details={pond:"Hồ Sen Bình Yên — Hít một hơi thật sâu, thả xuống mặt hồ những lo âu đang mang theo.",tree:"Cây Điều Lành — Chọn một việc tử tế nhỏ bạn có thể làm hôm nay, rồi để nó lớn lên từng ngày.",river:"Dòng Sông Đèn Lồng — Gửi một lời nguyện lành đến người bạn thương và để ánh đèn mang theo hy vọng."};
- detail.textContent=details[button.dataset.place];
-}));
+const sceneData={
+ pond:{kicker:"HỒ SEN BÌNH YÊN",title:"Để lòng mình lắng lại.",text:"Mặt hồ phẳng lặng nhắc ta rằng bình yên đôi khi bắt đầu từ một nhịp thở chậm. Hãy gửi xuống đây một điều bạn muốn buông nhẹ.",art:'<div class="water-ripple"></div><div class="water-ripple r2"></div><div class="lily-pad p1"></div><div class="lily-pad p2"></div><div class="lotus"><i></i></div><div class="lotus l2"><i></i></div>'},
+ tree:{kicker:"CÂY ĐIỀU LÀNH",title:"Gieo một điều tử tế.",text:"Một hành động nhỏ cũng có thể làm ngày của ai đó dịu hơn. Hãy nghĩ về một điều tốt bạn sẽ làm hôm nay — chiếc lá đầu tiên đã sáng lên.",art:'<div class="tree-trunk"></div><div class="tree-canopy"></div><div class="tree-glow"></div><i class="leaf-light l1"></i><i class="leaf-light l2"></i><i class="leaf-light l3"></i><i class="leaf-light l4"></i>'},
+ river:{kicker:"DÒNG SÔNG ĐÈN LỒNG",title:"Gửi ước nguyện theo dòng.",text:"Hãy dành một lời nguyện lành cho người bạn thương. Ánh đèn sẽ thay bạn mang theo hy vọng qua dòng nước yên ả.",art:'<div class="river-water"></div><div class="lantern n1"></div><div class="lantern n2"></div><div class="lantern n3"></div>'}
+};
+function openScene(place){
+ const data=sceneData[place];if(!data)return;
+ document.querySelector(".explorer-heading").hidden=true;
+ document.querySelector(".garden-places").hidden=true;
+ document.getElementById("placeDetail").hidden=true;
+ document.getElementById("explorerWish").hidden=true;
+ const view=document.getElementById("sceneView");
+ document.getElementById("sceneKicker").textContent=data.kicker;
+ document.getElementById("sceneTitle").textContent=data.title;
+ document.getElementById("sceneText").textContent=data.text;
+ document.getElementById("sceneArt").className="scene-art scene-"+place;
+ document.getElementById("sceneArt").innerHTML=data.art;
+ view.hidden=false;
+ document.querySelectorAll(".garden-place").forEach(item=>item.classList.toggle("selected",item.dataset.place===place));
+}
+function closeScene(){
+ document.getElementById("sceneView").hidden=true;
+ document.querySelector(".explorer-heading").hidden=false;
+ document.querySelector(".garden-places").hidden=false;
+ document.getElementById("placeDetail").hidden=false;
+ document.getElementById("explorerWish").hidden=false;
+}
+document.querySelectorAll(".garden-place").forEach(button=>button.addEventListener("click",()=>openScene(button.dataset.place)));
+document.getElementById("sceneBack").addEventListener("click",closeScene);
+document.getElementById("sceneAction").addEventListener("click",openPanel);
 function readWishes(){try{return JSON.parse(localStorage.getItem("vuon-an-lanh-wishes")||"[]");}catch{return[];}}
 function renderWishes(){
  const list=document.getElementById("wishList");
