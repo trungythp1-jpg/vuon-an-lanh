@@ -1,72 +1,7 @@
 <!doctype html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#102a25">
-  <meta name="description" content="Vườn An Lành – một thế giới nhỏ để gieo điều tử tế, gửi lời chúc và tìm lại bình yên.">
-  <title>Vườn An Lành — Gieo một điều lành</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css">
-  <script type="importmap">
-    {
-      "imports": {
-        "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js"
-      }
-    }
-  </script>
-</head>
-<body>
-  <main class="experience">
-    <div class="scene" id="scene" aria-label="Không gian khu vườn 3D"></div>
-    <div class="scene-vignette"></div>
-    <header class="topbar">
-      <a class="brand" href="#" aria-label="Vườn An Lành">
-        <span class="brand-mark">✳</span>
-        <span><strong>VƯỜN AN LÀNH</strong><small>THE GARDEN OF GOODNESS</small></span>
-      </a>
-      <nav class="desktop-nav" aria-label="Điều hướng chính">
-        <a href="#kham-pha">Khám phá</a>
-        <a href="#loi-chuc">Lời chúc</a>
-        <a href="#ve-chung-toi">Về khu vườn</a>
-      </nav>
-      <button class="sound-button" id="soundButton" type="button" aria-label="Bật hoặc tắt âm thanh"><span class="sound-icon">♫</span><span class="sound-label">Âm thanh</span></button>
-    </header>
-    <section class="hero" id="kham-pha">
-      <div class="eyebrow"><span></span> MỘT KHOẢNG TRỜI DÀNH CHO BẠN</div>
-      <h1>Nơi những điều<br><em>lành</em> được nảy mầm.</h1>
-      <p class="hero-copy">Chậm lại một chút. Gửi đi một lời chúc, gieo một điều tử tế và để lòng mình được bình yên.</p>
-      <div class="hero-actions">
-        <button class="primary-button" id="enterButton" type="button">Bước vào khu vườn <span>↗</span></button>
-        <button class="quiet-button" id="wishButton" type="button">Gửi một lời chúc <span>✧</span></button>
-      </div>
-      <div class="hero-note"><span class="note-line"></span><span>Hãy để lòng mình nở hoa</span></div>
-    </section>
-    <div class="side-note"><span>01 / 05</span><i></i><span>THE WISHING GARDEN</span></div>
-    <div class="bottom-bar">
-      <div class="garden-status"><span class="status-dot"></span><span>KHU VƯỜN ĐANG THỨC GIẤC</span></div>
-      <div class="scroll-hint"><span>CUỘN ĐỂ KHÁM PHÁ</span><b>↓</b></div>
-      <div class="weather-note"><span>☼</span><span>Một ngày dịu lành</span></div>
-    </div>
-    <section class="wish-panel" id="wishPanel" aria-hidden="true">
-      <button class="close-panel" id="closePanel" type="button" aria-label="Đóng">×</button>
-      <div class="panel-kicker">GỬI ĐIỀU LÀNH</div>
-      <h2>Một lời chúc<br><em>từ trái tim.</em></h2>
-      <p>Viết điều bạn muốn gửi đến một người, hoặc dành tặng chính mình.</p>
-      <form id="wishForm">
-        <label for="wishText">Lời chúc của bạn</label>
-        <textarea id="wishText" maxlength="180" placeholder="Mong bạn luôn bình an..." required></textarea>
-        <label for="wishTo">Gửi đến (không bắt buộc)</label>
-        <input id="wishTo" maxlength="50" placeholder="Một người thương...">
-        <button class="primary-button form-submit" type="submit">Thả lời chúc vào vườn <span>✧</span></button>
-      </form>
-      <div class="form-success" id="formSuccess" role="status">Lời chúc đã được giữ lại trong khoảnh khắc này. 🌿</div>
-      <small class="privacy-note">Bản trải nghiệm đầu tiên chỉ lưu lời chúc trên thiết bị của bạn, chưa gửi lên máy chủ.</small>
-    </section>
-    <div class="toast" id="toast" role="status"></div>
-  </main>
-  <script type="module" src="./app.js"></script>
-</body>
-</html>
+<html lang="vi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#102a25"><meta name="description" content="Vườn An Lành – gieo điều tử tế, gửi lời chúc và tìm lại bình yên."><title>Vườn An Lành — Gieo một điều lành</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="./styles.css"></head>
+<body><main class="experience"><div class="hero-art" aria-hidden="true"></div><div class="hero-shade" aria-hidden="true"></div><canvas class="ambient-particles" id="ambientParticles" aria-hidden="true"></canvas>
+<header class="topbar"><a class="brand" href="#" aria-label="Vườn An Lành"><span class="brand-mark">✳</span><span><strong>VƯỜN AN LÀNH</strong><small>THE GARDEN OF GOODNESS</small></span></a><nav class="desktop-nav"><a href="#kham-pha">Khám phá</a><a href="#loi-chuc">Lời chúc</a><a href="#ve-chung-toi">Về khu vườn</a></nav><button class="sound-button" id="soundButton" type="button"><span class="sound-icon">♫</span><span class="sound-label">Âm thanh</span></button></header>
+<section class="hero" id="kham-pha"><div class="eyebrow"><span></span>MỘT KHOẢNG TRỜI DÀNH CHO BẠN</div><h1>Nơi những điều<br><em>lành</em> được nảy mầm.</h1><p class="hero-copy">Chậm lại một chút. Gửi đi một lời chúc, gieo một điều tử tế và để lòng mình được bình yên.</p><div class="hero-actions"><button class="primary-button" id="enterButton" type="button">Bước vào khu vườn <span>↗</span></button><button class="quiet-button" id="wishButton" type="button">Gửi một lời chúc <span>✧</span></button></div><div class="hero-note"><span class="note-line"></span><span>Hãy để lòng mình nở hoa</span></div></section>
+<div class="side-note"><span>01 / 05</span><i></i><span>THE WISHING GARDEN</span></div><div class="bottom-bar"><div class="garden-status"><span class="status-dot"></span><span>KHU VƯỜN ĐANG THỨC GIẤC</span></div><a class="scroll-hint" href="#loi-chuc"><span>CUỘN ĐỂ KHÁM PHÁ</span><b>↓</b></a><div class="weather-note"><span>☼</span><span>Một ngày dịu lành</span></div></div>
+<section class="wish-panel" id="wishPanel" aria-hidden="true"><button class="close-panel" id="closePanel" type="button" aria-label="Đóng">×</button><div class="panel-kicker">GỬI ĐIỀU LÀNH</div><h2>Một lời chúc<br><em>từ trái tim.</em></h2><p>Viết điều bạn muốn gửi đến một người, hoặc dành tặng chính mình.</p><form id="wishForm"><label for="wishText">Lời chúc của bạn</label><textarea id="wishText" maxlength="180" placeholder="Mong bạn luôn bình an..." required></textarea><label for="wishTo">Gửi đến (không bắt buộc)</label><input id="wishTo" maxlength="50" placeholder="Một người thương..."><button class="primary-button form-submit" type="submit">Thả lời chúc vào vườn <span>✧</span></button></form><div class="form-success" id="formSuccess" role="status">Lời chúc đã được giữ lại trong khoảnh khắc này. 🌿</div><small class="privacy-note">Bản trải nghiệm đầu tiên chỉ lưu lời chúc trên thiết bị của bạn, chưa gửi lên máy chủ.</small></section><div class="toast" id="toast" role="status"></div></main><script src="./app.js"></script></body></html>
