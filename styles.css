@@ -17,3 +17,5 @@
 .sound-button.is-playing{border-color:var(--gold);background:rgba(223,193,127,.13)}.sound-button.is-playing .sound-icon{animation:soundPulse 1.5s infinite}
 @keyframes soundPulse{50%{text-shadow:0 0 13px var(--gold);transform:scale(1.2)}}
 @media(max-width:760px){.garden-explorer,.community-panel{padding:95px 23px 35px}.garden-places{grid-template-columns:1fr;gap:10px;margin-top:24px}.garden-place{min-height:145px;padding:18px 20px}.place-symbol{font-size:30px;margin-bottom:10px}.garden-place strong{font-size:19px}.wish-list{grid-template-columns:1fr}.explorer-close{top:20px;right:22px}.place-detail{font-size:15px}}
+
+[hidden]{display:none!important}
