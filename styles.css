@@ -19,3 +19,41 @@
 @media(max-width:760px){.garden-explorer,.community-panel{padding:95px 23px 35px}.garden-places{grid-template-columns:1fr;gap:10px;margin-top:24px}.garden-place{min-height:145px;padding:18px 20px}.place-symbol{font-size:30px;margin-bottom:10px}.garden-place strong{font-size:19px}.wish-list{grid-template-columns:1fr}.explorer-close{top:20px;right:22px}.place-detail{font-size:15px}}
 
 [hidden]{display:none!important}
+
+.garden-explorer{padding-top:clamp(82px,9vh,112px);padding-bottom:30px}
+.garden-explorer .explorer-heading h2{font-size:clamp(38px,4.3vw,56px);margin:12px 0 8px}
+.garden-explorer .explorer-heading p{margin:0}
+.garden-places{margin-top:24px}
+.garden-place{min-height:205px}
+.place-symbol.tree-mark{font-size:0;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle,#d8c27d 0 8%,#8ca66a 10% 23%,#315b3d 25% 60%,transparent 63%);color:transparent;filter:drop-shadow(0 0 15px rgba(217,194,112,.32))}
+.scene-view{position:relative;margin-top:24px;min-height:clamp(360px,48vh,510px);border:1px solid rgba(223,193,127,.3);background:rgba(4,22,18,.34);overflow:hidden}
+.scene-back{position:absolute;z-index:5;top:16px;left:16px;border:1px solid rgba(244,239,223,.35);background:rgba(7,27,22,.72);color:var(--cream);padding:10px 13px;font-size:10px}
+.scene-art{position:absolute;inset:0;overflow:hidden}
+.scene-copy{position:absolute;z-index:3;left:5%;bottom:8%;max-width:420px;text-shadow:0 2px 15px #061b15}
+.scene-copy h3{font:400 clamp(28px,3.6vw,43px)/1.1 "Playfair Display",Georgia,serif;margin:12px 0;color:var(--cream)}
+.scene-copy p{font-size:12px;line-height:1.8;color:rgba(244,239,223,.86);max-width:390px}
+.scene-art:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,22,18,.72),rgba(4,22,18,.08) 75%),linear-gradient(0deg,rgba(4,22,18,.64),transparent 70%)}
+.scene-pond{background:radial-gradient(ellipse at 70% 84%,#38785d 0 20%,#1b5948 21% 43%,transparent 44%),linear-gradient(180deg,#173d32 0%,#275b46 50%,#102e27 100%)}
+.scene-pond .water-ripple{position:absolute;left:35%;top:55%;width:55%;height:25%;border:1px solid rgba(211,220,161,.36);border-radius:50%;transform:rotate(-8deg);box-shadow:0 0 35px rgba(176,209,153,.12),inset 0 0 35px rgba(183,219,166,.12);animation:rippleGlow 5s ease-in-out infinite}
+.scene-pond .water-ripple.r2{left:50%;top:70%;width:36%;height:12%;animation-delay:1.4s}
+.lotus{position:absolute;width:74px;height:34px;left:64%;top:48%;filter:drop-shadow(0 8px 8px rgba(0,0,0,.25));animation:lotusFloat 5s ease-in-out infinite}
+.lotus:before,.lotus:after{content:"";position:absolute;bottom:0;width:31px;height:48px;border-radius:100% 0 100% 0;background:linear-gradient(135deg,#f9d9d7,#d58e9b);transform-origin:bottom center}
+.lotus:before{left:9px;transform:rotate(-34deg)}.lotus:after{right:9px;transform:scaleX(-1) rotate(-34deg)}
+.lotus i{position:absolute;z-index:2;left:28px;bottom:0;width:22px;height:37px;border-radius:100% 0 100% 0;background:linear-gradient(135deg,#fff0d4,#dca0a2);transform:rotate(2deg)}
+.lotus.l2{left:78%;top:65%;transform:scale(.7);animation-delay:1.8s}.lily-pad{position:absolute;width:110px;height:38px;border-radius:50%;background:radial-gradient(ellipse at 60% 40%,#8eae65,#416f4b 75%);box-shadow:inset -8px -4px 0 rgba(10,44,31,.18);transform:rotate(-8deg)}
+.lily-pad.p1{left:55%;top:59%}.lily-pad.p2{left:76%;top:76%;transform:scale(.7) rotate(12deg)}
+.scene-tree{background:radial-gradient(ellipse at 72% 35%,rgba(218,190,107,.2),transparent 35%),linear-gradient(180deg,#183d30,#0d2b22 75%)}
+.tree-trunk{position:absolute;left:69%;bottom:-6%;width:42px;height:72%;background:linear-gradient(90deg,#382b1d,#85603a 45%,#3b2a1b);border-radius:45% 45% 8% 8%;transform:rotate(5deg);box-shadow:12px 0 35px rgba(0,0,0,.25)}
+.tree-canopy{position:absolute;left:48%;top:5%;width:42%;height:62%;border-radius:48% 52% 46% 54%;background:radial-gradient(circle at 35% 28%,#9aab68 0 4%,transparent 5%),radial-gradient(circle at 68% 25%,#7d9956 0 13%,transparent 14%),radial-gradient(circle at 48% 54%,#527d4d 0 30%,transparent 31%),radial-gradient(circle at 20% 60%,#365e3d 0 24%,transparent 25%),radial-gradient(circle at 78% 62%,#6d8d4e 0 25%,transparent 26%);filter:drop-shadow(0 18px 22px rgba(0,0,0,.24));animation:canopySway 8s ease-in-out infinite alternate}
+.tree-glow{position:absolute;left:69%;top:43%;width:34px;height:34px;border-radius:50%;background:#f7d78e;box-shadow:0 0 14px 7px rgba(255,212,124,.42),0 0 55px 22px rgba(255,195,91,.18);animation:glowPulse 3s ease-in-out infinite}
+.leaf-light{position:absolute;width:7px;height:13px;border-radius:90% 0 90% 0;background:#d9d78c;box-shadow:0 0 13px #d9d78c;animation:leafDrift 5s ease-in-out infinite}
+.leaf-light.l1{left:53%;top:32%}.leaf-light.l2{left:83%;top:48%;animation-delay:1s}.leaf-light.l3{left:64%;top:19%;animation-delay:2s}.leaf-light.l4{left:44%;top:54%;animation-delay:3s}
+.scene-river{background:linear-gradient(180deg,#153b31 0%,#1d5141 42%,#102e2a 100%)}
+.river-water{position:absolute;left:26%;right:-15%;bottom:-8%;height:66%;border-radius:50% 50% 0 0;background:repeating-linear-gradient(176deg,transparent 0 17px,rgba(201,211,156,.12) 18px 19px,transparent 20px 38px),linear-gradient(180deg,#39775b,#153c34);transform:rotate(-7deg);box-shadow:inset 0 20px 50px rgba(194,218,158,.12)}
+.lantern{position:absolute;width:34px;height:43px;border-radius:45% 45% 42% 42%;background:radial-gradient(circle at 35% 28%,#fff1bd,#d6a75c 60%,#8d5733);box-shadow:0 0 20px 6px rgba(245,197,112,.28);animation:lanternFloat 6s ease-in-out infinite}
+.lantern:before{content:"";position:absolute;left:15px;top:-16px;height:16px;border-left:1px solid rgba(234,204,145,.65)}
+.lantern:after{content:"✧";position:absolute;inset:9px 0;text-align:center;color:#8b5c34;font-size:12px}
+.lantern.n1{left:53%;top:43%}.lantern.n2{left:72%;top:59%;transform:scale(.75);animation-delay:1.5s}.lantern.n3{left:86%;top:34%;transform:scale(.58);animation-delay:3s}
+@keyframes rippleGlow{50%{opacity:.5;transform:rotate(-8deg) scale(1.06)}}@keyframes lotusFloat{50%{translate:0 -8px}}@keyframes canopySway{to{transform:rotate(2deg) translateY(4px)}}@keyframes glowPulse{50%{opacity:.65;box-shadow:0 0 24px 11px rgba(255,212,124,.48),0 0 65px 30px rgba(255,195,91,.2)}}@keyframes leafDrift{50%{transform:translate(12px,-16px) rotate(30deg);opacity:.35}}@keyframes lanternFloat{50%{translate:0 -13px;filter:brightness(1.15)}}
+@media(max-width:760px){.garden-explorer{padding:84px 18px 24px}.garden-explorer .explorer-heading h2{font-size:39px}.garden-explorer .explorer-heading p{font-size:11px}.garden-places{grid-template-columns:1fr;gap:8px;margin-top:18px}.garden-place{min-height:112px;padding:14px 18px}.place-number{top:12px;left:17px}.place-symbol{font-size:29px;margin-bottom:7px}.place-symbol.tree-mark{width:39px;height:39px}.garden-place strong{font-size:18px}.garden-place small{font-size:10px;margin-top:4px}.place-detail{font-size:14px;margin-top:14px}.scene-view{min-height:470px}.scene-copy{left:20px;right:20px;bottom:24px}.scene-copy h3{font-size:31px}.scene-copy p{font-size:11px}.tree-canopy{left:31%;width:65%;height:57%}.tree-trunk{left:62%}.tree-glow{left:62%}.scene-pond .water-ripple{left:15%;width:82%}.lotus{left:56%}.lotus.l2{left:76%}.river-water{left:8%;right:-28%}}
+@media(prefers-reduced-motion:reduce){.water-ripple,.lotus,.tree-canopy,.tree-glow,.leaf-light,.lantern{animation:none!important}}
